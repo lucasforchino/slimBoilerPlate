@@ -6,7 +6,7 @@ use App\Slim\View;
 class MainController extends Controller
 {
 
-    public function ini()
+    public function init()
     {
         View::set_layout('_layouts/layout.php');
     }

@@ -13,6 +13,7 @@ $config = \App\Services\Config::getInstance(ENVIRONMENT)->getConfig();
 
 //get slim $app
 $app    = new \Slim\Slim($config);
+$app->add(new \App\Middleware\Layout());
 
 //include routes
 require APPLICATION_PATH.'/Routes/routes.php';
