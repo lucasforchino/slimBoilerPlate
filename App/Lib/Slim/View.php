@@ -1,5 +1,6 @@
 <?php
-namespace App\Slim;
+namespace App\Lib\Slim;
+
 class View extends \Slim\View
 {
     

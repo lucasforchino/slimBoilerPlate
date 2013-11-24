@@ -6,14 +6,12 @@ class Layout extends Middleware
 {
     public function call()
     {
-        
-        $view   = new \App\Slim\View();
-        \App\Slim\View::set_layout('_layouts/panel.php');
+        $configService = \App\Services\Config::getInstance();
+        $layoutConfig  = $configService->getConfigSection('layout');
+        $view   = new \App\Lib\Slim\View();
+        \App\Lib\Slim\View::set_layout($layoutConfig);
         $app = \Slim\Slim::getInstance();
         $app->view($view);
-        
-        
-        
         $this->next->call();
     }
 }
